@@ -25,4 +25,5 @@ npx hyperframes render -o renders/coca-cola-30-days-4k.mp4
 
 Notes:
 - The 3D canvas draws at 1080×1920 and is scaled to the 4K frame, which keeps software-GPU render times practical. Text and captions render at native 4K. Raise `width`/`height` on the canvas in `compositions/world.html` for full-resolution 3D on a GPU machine.
+- `renders/coca-cola-30-days-1080p.mp4` is committed; the 4K master (~130 MB) exceeds GitHub's 100 MB file limit, so re-render it locally. Audio is loudness-normalized to about −14 LUFS after render (`ffmpeg … -c:v copy -af loudnorm=I=-14.5:TP=-1.5`).
 - There is no music bed: no music source was available in this environment. Add one as an `<audio id="music" …>` in `index.html` at about 0.14 volume under the voice.

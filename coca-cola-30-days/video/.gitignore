@@ -3,3 +3,4 @@ node_modules/
 renders/work-*/
 renders/*.tmp*
 renders/.*
+renders/*-4k.mp4
