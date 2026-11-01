@@ -1,0 +1,20 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #000; }
+    #world-canvas { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; }
+  </style>
+  <div id="root" data-composition-id="world" data-width="2160" data-height="3840" data-duration="46">
+    <canvas id="world-canvas" width="1080" height="1920"></canvas>
+  </div>
+  <script>
+    (function () {
+      const canvas = document.getElementById("world-canvas");
+      const world = window.CokeWorld.createWorld(canvas, canvas.width, canvas.height);
+      const clock = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(clock, { t: 0 }, { t: 46, duration: 46, ease: "none", onUpdate: () => world.render(clock.t) }, 0);
+      world.render(0);
+      window.__timelines["world"] = tl;
+    })();
+  </script>
+</template>

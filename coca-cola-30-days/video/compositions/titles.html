@@ -1,0 +1,119 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Inter", sans-serif; color: #fff; }
+    #root .clip { position: absolute; left: 0; width: 2160px; }
+    .tbox { height: 1500px; }
+    .tin { width: 100%; padding: 0 240px; text-align: center; transform-origin: 50% 30%;
+           text-shadow: 0 8px 40px rgba(0,0,0,.85), 0 2px 6px rgba(0,0,0,.9); }
+    .t-s { font-size: 76px; font-weight: 700; letter-spacing: .08em; }
+    .t-m { font-size: 104px; font-weight: 900; letter-spacing: .02em; line-height: 1.1; }
+    .t-l { font-size: 150px; font-weight: 900; letter-spacing: -.01em; line-height: 1.02; }
+    .t-xl { font-size: 200px; font-weight: 900; letter-spacing: -.02em; line-height: .98; }
+    .t-xxl { font-size: 380px; font-weight: 900; letter-spacing: -.04em; line-height: .95; }
+    .red { color: #ff2b2b; } .amber { color: #ffb12e; } .yellow { color: #ffd23f; }
+    .blue { color: #72d3ff; } .green { color: #8dff63; } .dim { color: rgba(255,255,255,.78); }
+    .chip { display: inline-block; font-size: 64px; font-weight: 700; letter-spacing: .3em; padding: 22px 46px 22px 62px;
+            border: 4px solid rgba(255,255,255,.85); border-radius: 80px; margin-bottom: 36px; background: rgba(0,0,0,.35); }
+    .graph { width: 1400px; height: 520px; margin: 30px auto 10px; display: block; overflow: visible; }
+    .graph .axis { stroke: rgba(255,255,255,.5); stroke-width: 6; fill: none; }
+    .graph .line { stroke: #ffb12e; stroke-width: 20; fill: none; stroke-linecap: round; stroke-dasharray: 1700; filter: drop-shadow(0 0 22px #ff9a00); }
+    .graph .dot { fill: #fff; filter: drop-shadow(0 0 24px #ffb12e); }
+    .disc { display: inline-block; font-size: 46px; font-weight: 400; line-height: 1.35; color: rgba(255,255,255,.88); background: rgba(0,0,0,.62); padding: 22px 40px; border-radius: 24px; }
+    #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+    #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="titles" data-width="2160" data-height="3840" data-duration="46" data-layout-allow-overlap>
+    <div id="vignette" data-layout-ignore></div>
+    <div id="flash" data-layout-ignore></div>
+        <div id="ti-hook" class="clip tbox" data-start="0.0" data-duration="4.75" data-track-index="1" style="top:470px"><div id="tin-hook" class="tin"><div class="t-s">WHAT HAPPENS IF YOU DRINK</div><div class="t-xl red">COCA-COLA</div><div class="t-l">EVERY DAY</div><div class="t-l">FOR <span class="amber">30 DAYS?</span></div></div></div>
+    <div id="ti-sugar" class="clip tbox" data-start="5.45" data-duration="2.55" data-track-index="2" style="top:470px"><div id="tin-sugar" class="tin"><div class="t-xxl amber">35 g</div><div class="t-l">OF SUGAR</div><div class="t-m dim">&asymp; 9 TEASPOONS &middot; ONE CAN</div></div></div>
+    <div id="ti-lab-sto" class="clip tbox" data-start="9.45" data-duration="4.9" data-track-index="3" style="top:470px"><div id="tin-lab-sto" class="tin"><div class="chip">STOMACH</div></div></div>
+    <div id="ti-ph" class="clip tbox" data-start="10.0" data-duration="4.35" data-track-index="1" style="top:760px"><div id="tin-ph" class="tin"><div class="t-m">COLA IS ACIDIC</div><div class="t-xl red">pH &asymp; 2.5</div></div></div>
+    <div id="ti-lab-int" class="clip tbox" data-start="14.45" data-duration="2.9" data-track-index="2" style="top:470px"><div id="tin-lab-int" class="tin"><div class="chip">SMALL INTESTINE</div><div class="t-m" style="margin-top:40px">SUGAR <span class="amber">ABSORBED</span></div></div></div>
+    <div id="ti-graph" class="clip tbox" data-start="17.45" data-duration="2.8" data-track-index="3" style="top:470px"><div id="tin-graph" class="tin"><div class="chip">BLOODSTREAM</div><div class="t-l">BLOOD SUGAR <span class="amber">&uarr;</span></div><svg class="graph" viewBox="0 0 1400 520"><path class="axis" d="M40 470 H1360"/><path id="graph-line" class="line" d="M40 420 C 260 420, 380 415, 480 380 S 640 60, 760 70 S 900 250, 1040 330 S 1260 380, 1360 390"/><circle id="graph-dot" cx="760" cy="70" r="22" class="dot"/></svg><div class="t-s dim">PEAKS ~30&ndash;60 MIN AFTER DRINKING</div></div></div>
+    <div id="ti-lab-pan" class="clip tbox" data-start="20.35" data-duration="1.9" data-track-index="1" style="top:470px"><div id="tin-lab-pan" class="tin"><div class="chip">PANCREAS</div><div class="t-l red">ALARM</div></div></div>
+    <div id="ti-insulin" class="clip tbox" data-start="22.3" data-duration="1.25" data-track-index="2" style="top:470px"><div id="tin-insulin" class="tin"><div class="chip">ISLETS OF LANGERHANS</div><div class="t-l blue">INSULIN RELEASED</div></div></div>
+    <div id="ti-intocells" class="clip tbox" data-start="23.65" data-duration="1.75" data-track-index="3" style="top:470px"><div id="tin-intocells" class="tin"><div class="t-m">INSULIN UNLOCKS CELLS</div><div class="t-l"><span class="amber">SUGAR</span> &rarr; IN</div></div></div>
+    <div id="ti-fat" class="clip tbox" data-start="25.45" data-duration="1.8" data-track-index="1" style="top:470px"><div id="tin-fat" class="tin"><div class="t-m">THE EXCESS</div><div class="t-l">&rarr; STORED AS <span class="yellow">FAT</span></div></div></div>
+    <div id="ti-lab-tooth" class="clip tbox" data-start="27.35" data-duration="3.35" data-track-index="2" style="top:470px"><div id="tin-lab-tooth" class="tin"><div class="chip">TOOTH ENAMEL</div><div class="t-m">BACTERIA + SUGAR &rarr; <span class="green">ACID</span></div></div></div>
+    <div id="ti-erosion" class="clip tbox" data-start="30.74" data-duration="1.51" data-track-index="3" style="top:470px"><div id="tin-erosion" class="tin"><div class="t-xl green">ACID EROSION</div></div></div>
+    <div id="ti-days" class="clip tbox" data-start="32.35" data-duration="3.3" data-track-index="1" style="top:470px"><div id="tin-days" class="tin"><div class="t-m dim">DAY</div><div id="day-num" class="t-xxl">1</div><div id="kcal" class="t-l"><span class="amber">&asymp; 4,200</span> EXTRA kcal</div><div id="kcal-sub" class="t-s dim">30 CANS &times; ~140 kcal</div></div></div>
+    <div id="ti-lt" class="clip tbox" data-start="35.8" data-duration="2.45" data-track-index="2" style="top:470px"><div id="tin-lt" class="tin"><div class="t-m dim">KEEP IT UP FOR YEARS</div><div class="t-l red">LONG-TERM RISKS</div></div></div>
+    <div id="ti-r1" class="clip tbox" data-start="38.3" data-duration="0.92" data-track-index="3" style="top:470px"><div id="tin-r1" class="tin"><div class="t-xl yellow">WEIGHT GAIN</div></div></div>
+    <div id="ti-r2" class="clip tbox" data-start="39.25" data-duration="0.87" data-track-index="1" style="top:470px"><div id="tin-r2" class="tin"><div class="t-xl yellow">FATTY LIVER</div></div></div>
+    <div id="ti-r3" class="clip tbox" data-start="40.15" data-duration="1.17" data-track-index="2" style="top:470px"><div id="tin-r3" class="tin"><div class="t-xl amber">TYPE 2</div><div class="t-xl amber">DIABETES</div></div></div>
+    <div id="ti-r4" class="clip tbox" data-start="41.35" data-duration="1.23" data-track-index="3" style="top:470px"><div id="tin-r4" class="tin"><div class="t-xl red">HEART DISEASE</div></div></div>
+    <div id="ti-end1" class="clip tbox" data-start="42.8" data-duration="3.2" data-track-index="1" style="top:470px"><div id="tin-end1" class="tin"><div class="t-l">YOUR BODY</div><div class="t-xl red">KEEPS SCORE.</div></div></div>
+    <div id="ti-end2" class="clip tbox" data-start="44.05" data-duration="1.95" data-track-index="2" style="top:1060px"><div id="tin-end2" class="tin"><div class="t-m">EVERY SINGLE CAN.</div></div></div>
+    <div id="ti-disc" class="clip tbox" data-start="44.5" data-duration="1.5" data-track-index="3" style="top:1330px"><div id="tin-disc" class="tin"><div class="disc">Educational content. Risks reflect long-term, regular intake;<br>effects vary by person and overall diet. Sugar: 10.6 g/100 ml label value.</div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#tin-hook",{scale:1.06},{scale:1,duration:0.6,ease:"power3.out"},0);
+    tl.fromTo("#ti-hook .t-xl",{scale:1},{scale:1.08,duration:0.18,ease:"power2.out",yoyo:true,repeat:1},0.75);
+    tl.fromTo("#tin-sugar",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},5.45);
+    tl.to("#tin-sugar",{opacity:0,duration:0.12},7.86);
+    tl.fromTo("#tin-lab-sto",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},9.45);
+    tl.to("#tin-lab-sto",{opacity:0,duration:0.12},14.21);
+    tl.fromTo("#tin-ph",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},10.0);
+    tl.to("#tin-ph",{opacity:0,duration:0.12},14.21);
+    tl.fromTo("#tin-lab-int",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},14.45);
+    tl.to("#tin-lab-int",{opacity:0,duration:0.12},17.21);
+    tl.fromTo("#tin-graph",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},17.45);
+    tl.to("#tin-graph",{opacity:0,duration:0.12},20.11);
+    tl.fromTo("#tin-lab-pan",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},20.35);
+    tl.to("#tin-lab-pan",{opacity:0,duration:0.12},22.11);
+    tl.fromTo("#tin-insulin",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},22.3);
+    tl.to("#tin-insulin",{opacity:0,duration:0.12},23.41);
+    tl.fromTo("#tin-intocells",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},23.65);
+    tl.to("#tin-intocells",{opacity:0,duration:0.12},25.26);
+    tl.fromTo("#tin-fat",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},25.45);
+    tl.to("#tin-fat",{opacity:0,duration:0.12},27.11);
+    tl.fromTo("#tin-lab-tooth",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},27.35);
+    tl.to("#tin-lab-tooth",{opacity:0,duration:0.12},30.56);
+    tl.fromTo("#tin-erosion",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},30.74);
+    tl.to("#tin-erosion",{opacity:0,duration:0.12},32.11);
+    tl.fromTo("#tin-days",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},32.35);
+    tl.to("#tin-days",{opacity:0,duration:0.12},35.51);
+    tl.fromTo("#tin-lt",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},35.8);
+    tl.to("#tin-lt",{opacity:0,duration:0.12},38.11);
+    tl.fromTo("#tin-r1",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.16,ease:"power4.out"},38.3);
+    tl.fromTo("#tin-r1",{x:-14},{x:0,duration:0.2,ease:"elastic.out(1,0.3)"},38.459999999999994);
+    tl.to("#tin-r1",{opacity:0,duration:0.12},39.08);
+    tl.fromTo("#tin-r2",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.16,ease:"power4.out"},39.25);
+    tl.fromTo("#tin-r2",{x:-14},{x:0,duration:0.2,ease:"elastic.out(1,0.3)"},39.41);
+    tl.to("#tin-r2",{opacity:0,duration:0.12},39.98);
+    tl.fromTo("#tin-r3",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.16,ease:"power4.out"},40.15);
+    tl.fromTo("#tin-r3",{x:-14},{x:0,duration:0.2,ease:"elastic.out(1,0.3)"},40.309999999999995);
+    tl.to("#tin-r3",{opacity:0,duration:0.12},41.18);
+    tl.fromTo("#tin-r4",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.16,ease:"power4.out"},41.35);
+    tl.fromTo("#tin-r4",{x:-14},{x:0,duration:0.2,ease:"elastic.out(1,0.3)"},41.51);
+    tl.to("#tin-r4",{opacity:0,duration:0.12},42.44);
+    tl.fromTo("#tin-end1",{opacity:0,scale:0.9,filter:"blur(20px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.5,ease:"power3.out"},42.8);
+    tl.fromTo("#tin-end2",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},44.05);
+    tl.fromTo("#tin-disc",{opacity:0},{opacity:1,duration:0.4},44.5);
+    tl.fromTo("#graph-line",{strokeDashoffset:1700},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},17.6);
+    tl.fromTo("#graph-dot",{scale:0,transformOrigin:"50% 50%"},{scale:1,duration:0.25,ease:"back.out(3)"},18.55);
+    const day={v:1};tl.fromTo(day,{v:1},{v:30,duration:3.0,ease:"none",onUpdate:()=>{document.getElementById("day-num").textContent=String(Math.round(day.v));}},32.45);
+    tl.fromTo("#kcal",{opacity:0,y:40},{opacity:1,y:0,duration:0.3,ease:"back.out(2)"},33.6);
+    tl.fromTo("#kcal-sub",{opacity:0},{opacity:1,duration:0.3},33.9);
+    tl.fromTo("#day-num",{scale:1},{scale:1.15,duration:0.12,yoyo:true,repeat:1,ease:"power2.out"},35.45);
+    tl.set("#flash",{opacity:0.55},7.9);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},7.9);
+    tl.set("#flash",{opacity:0.55},9.4);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},9.4);
+    tl.set("#flash",{opacity:0.55},14.4);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},14.4);
+    tl.set("#flash",{opacity:0.55},17.4);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},17.4);
+    tl.set("#flash",{opacity:0.55},20.3);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},20.3);
+    tl.set("#flash",{opacity:0.55},22.3);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},22.3);
+    tl.set("#flash",{opacity:0.55},23.6);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},23.6);
+    tl.set("#flash",{opacity:0.55},27.3);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},27.3);
+    tl.set("#flash",{opacity:0.55},32.3);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},32.3);
+    tl.set("#flash",{opacity:0.55},35.7);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},35.7);
+    tl.set("#flash",{opacity:0.55},38.3);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},38.3);
+    tl.set("#flash",{opacity:0.55},39.25);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},39.25);
+    tl.set("#flash",{opacity:0.55},40.15);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},40.15);
+    tl.set("#flash",{opacity:0.55},41.35);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},41.35);
+    tl.set("#flash",{opacity:0.55},42.6);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},42.6);
+    tl.set("#flash",{opacity:0},0);
+    window.__timelines["titles"] = tl;
+  </script>
+</template>

@@ -1,0 +1,57 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Inter", sans-serif; }
+    #root .cap { position: absolute; left: 0; top: 2330px; width: 2160px; height: 360px; }
+    .cap-in { padding: 0 260px; text-align: center; font-size: 104px; font-weight: 900; line-height: 1.12; color: #fff;
+              text-shadow: 0 0 6px #000, 0 6px 28px rgba(0,0,0,.95), 0 0 2px #000; }
+    .kw { color: #ffcf33; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="2160" data-height="3840" data-duration="46">
+        <div id="cap-00" class="clip cap" data-start="4.85" data-duration="0.55" data-track-index="0"><div id="cap-00-in" class="cap-in">One can.</div></div>
+    <div id="cap-01" class="clip cap" data-start="5.5" data-duration="1.8" data-track-index="1"><div id="cap-01-in" class="cap-in">About <span class="kw">35 grams</span> of sugar.</div></div>
+    <div id="cap-02" class="clip cap" data-start="7.45" data-duration="1.4" data-track-index="0"><div id="cap-02-in" class="cap-in">Nearly <span class="kw">9 teaspoons.</span></div></div>
+    <div id="cap-03" class="clip cap" data-start="9.07" data-duration="0.78" data-track-index="1"><div id="cap-03-in" class="cap-in">In your <span class="kw">stomach,</span></div></div>
+    <div id="cap-04" class="clip cap" data-start="9.9" data-duration="2.05" data-track-index="0"><div id="cap-04-in" class="cap-in">the <span class="kw">acidic</span> fizz moves on fast.</div></div>
+    <div id="cap-05" class="clip cap" data-start="12.05" data-duration="2.1" data-track-index="1"><div id="cap-05-in" class="cap-in">Liquid sugar doesn&#x27;t wait to be digested.</div></div>
+    <div id="cap-06" class="clip cap" data-start="14.38" data-duration="0.97" data-track-index="0"><div id="cap-06-in" class="cap-in">In the <span class="kw">small intestine,</span></div></div>
+    <div id="cap-07" class="clip cap" data-start="15.4" data-duration="1.8" data-track-index="1"><div id="cap-07-in" class="cap-in">it floods into your <span class="kw">bloodstream.</span></div></div>
+    <div id="cap-08" class="clip cap" data-start="17.35" data-duration="1.2" data-track-index="0"><div id="cap-08-in" class="cap-in">Within about <span class="kw">30 minutes,</span></div></div>
+    <div id="cap-09" class="clip cap" data-start="18.6" data-duration="1.5" data-track-index="1"><div id="cap-09-in" class="cap-in">your <span class="kw">blood sugar spikes.</span></div></div>
+    <div id="cap-10" class="clip cap" data-start="20.32" data-duration="1.53" data-track-index="0"><div id="cap-10-in" class="cap-in">Your <span class="kw">pancreas</span> sounds the alarm.</div></div>
+    <div id="cap-11" class="clip cap" data-start="22.2" data-duration="1.3" data-track-index="1"><div id="cap-11-in" class="cap-in">It releases <span class="kw">insulin,</span></div></div>
+    <div id="cap-12" class="clip cap" data-start="23.6" data-duration="1.75" data-track-index="0"><div id="cap-12-in" class="cap-in">pushing that <span class="kw">sugar</span> into your cells,</div></div>
+    <div id="cap-13" class="clip cap" data-start="25.4" data-duration="1.7" data-track-index="1"><div id="cap-13-in" class="cap-in">and storing the excess as <span class="kw">fat.</span></div></div>
+    <div id="cap-14" class="clip cap" data-start="27.29" data-duration="1.31" data-track-index="0"><div id="cap-14-in" class="cap-in">Meanwhile, mouth <span class="kw">bacteria</span> feast</div></div>
+    <div id="cap-15" class="clip cap" data-start="28.6" data-duration="1.9" data-track-index="1"><div id="cap-15-in" class="cap-in">on the sugar and make <span class="kw">acid,</span></div></div>
+    <div id="cap-16" class="clip cap" data-start="30.6" data-duration="1.4" data-track-index="0"><div id="cap-16-in" class="cap-in">which attacks your <span class="kw">enamel.</span></div></div>
+    <div id="cap-17" class="clip cap" data-start="32.35" data-duration="1.25" data-track-index="1"><div id="cap-17-in" class="cap-in">And <span class="kw">30 cans</span> add over</div></div>
+    <div id="cap-18" class="clip cap" data-start="33.6" data-duration="1.9" data-track-index="0"><div id="cap-18-in" class="cap-in"><span class="kw">4,000 extra calories.</span></div></div>
+    <div id="cap-19" class="clip cap" data-start="35.75" data-duration="1.15" data-track-index="1"><div id="cap-19-in" class="cap-in">Keep this habit for <span class="kw">years,</span></div></div>
+    <div id="cap-20" class="clip cap" data-start="36.9" data-duration="1.2" data-track-index="0"><div id="cap-20-in" class="cap-in">and the <span class="kw">risks</span> climb.</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#cap-00-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},4.85);
+    tl.fromTo("#cap-01-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},5.5);
+    tl.fromTo("#cap-02-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},7.45);
+    tl.fromTo("#cap-03-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},9.07);
+    tl.fromTo("#cap-04-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},9.9);
+    tl.fromTo("#cap-05-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},12.05);
+    tl.fromTo("#cap-06-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},14.38);
+    tl.fromTo("#cap-07-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},15.4);
+    tl.fromTo("#cap-08-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},17.35);
+    tl.fromTo("#cap-09-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},18.6);
+    tl.fromTo("#cap-10-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},20.32);
+    tl.fromTo("#cap-11-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},22.2);
+    tl.fromTo("#cap-12-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},23.6);
+    tl.fromTo("#cap-13-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},25.4);
+    tl.fromTo("#cap-14-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},27.29);
+    tl.fromTo("#cap-15-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},28.6);
+    tl.fromTo("#cap-16-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},30.6);
+    tl.fromTo("#cap-17-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},32.35);
+    tl.fromTo("#cap-18-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},33.6);
+    tl.fromTo("#cap-19-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},35.75);
+    tl.fromTo("#cap-20-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},36.9);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

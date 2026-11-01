@@ -6,6 +6,10 @@
 
 ---
 
+> **Built version:** the `video/` folder holds a HyperFrames + Three.js build of this storyboard. It renders to `video/renders/coca-cola-30-days-4k.mp4` (46 s, 2160×3840). See `video/README.md`. The sections below are the original brief for AI-video generators.
+
+---
+
 ## 1. Voiceover script (113 words, about 44 s at a brisk, suspenseful pace)
 
 | Time | Scene | Narration |
