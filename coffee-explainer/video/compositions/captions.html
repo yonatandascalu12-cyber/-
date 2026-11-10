@@ -1,0 +1,53 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Inter", sans-serif; }
+    #root .cap { position: absolute; left: 0; top: 2330px; width: 2160px; height: 360px; }
+    .cap-in { padding: 0 260px; text-align: center; font-size: 104px; font-weight: 900; line-height: 1.12; color: #fff;
+              text-shadow: 0 0 6px #000, 0 6px 28px rgba(0,0,0,.95), 0 0 2px #000; }
+    .kw { color: #ffcf33; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="2160" data-height="3840" data-duration="46">
+        <div id="cap-00" class="clip cap" data-start="3.3" data-duration="0.45" data-track-index="0"><div id="cap-00-in" class="cap-in">One cup.</div></div>
+    <div id="cap-01" class="clip cap" data-start="3.95" data-duration="2.05" data-track-index="1"><div id="cap-01-in" class="cap-in">About <span class="kw">95 milligrams</span> of caffeine.</div></div>
+    <div id="cap-02" class="clip cap" data-start="6.45" data-duration="2.15" data-track-index="0"><div id="cap-02-in" class="cap-in">It&#x27;s absorbed through your gut into your <span class="kw">blood,</span></div></div>
+    <div id="cap-03" class="clip cap" data-start="8.85" data-duration="1.9" data-track-index="1"><div id="cap-03-in" class="cap-in">peaking <span class="kw">30–60 minutes</span> later.</div></div>
+    <div id="cap-04" class="clip cap" data-start="11.05" data-duration="1.55" data-track-index="0"><div id="cap-04-in" class="cap-in">Then it slips straight into your <span class="kw">brain.</span></div></div>
+    <div id="cap-05" class="clip cap" data-start="13.1" data-duration="2.25" data-track-index="1"><div id="cap-05-in" class="cap-in">All day, your brain builds up <span class="kw">adenosine,</span></div></div>
+    <div id="cap-06" class="clip cap" data-start="15.65" data-duration="2.0" data-track-index="0"><div id="cap-06-in" class="cap-in">the molecule that makes you feel <span class="kw">sleepy.</span></div></div>
+    <div id="cap-07" class="clip cap" data-start="18.05" data-duration="1.55" data-track-index="1"><div id="cap-07-in" class="cap-in">Caffeine is shaped <span class="kw">just like it.</span></div></div>
+    <div id="cap-08" class="clip cap" data-start="19.95" data-duration="2.95" data-track-index="0"><div id="cap-08-in" class="cap-in">It plugs adenosine&#x27;s receptors, and <span class="kw">blocks the signal.</span></div></div>
+    <div id="cap-09" class="clip cap" data-start="23.3" data-duration="1.65" data-track-index="1"><div id="cap-09-in" class="cap-in">Your brain stops hearing <span class="kw">“tired.”</span></div></div>
+    <div id="cap-10" class="clip cap" data-start="25.15" data-duration="0.8" data-track-index="0"><div id="cap-10-in" class="cap-in">You feel <span class="kw">alert.</span></div></div>
+    <div id="cap-11" class="clip cap" data-start="26.25" data-duration="1.55" data-track-index="1"><div id="cap-11-in" class="cap-in">Your heart beats a little <span class="kw">faster.</span></div></div>
+    <div id="cap-12" class="clip cap" data-start="28.35" data-duration="2.35" data-track-index="0"><div id="cap-12-in" class="cap-in">But caffeine&#x27;s <span class="kw">half-life</span> is about <span class="kw">5 hours.</span></div></div>
+    <div id="cap-13" class="clip cap" data-start="30.9" data-duration="3.1" data-track-index="1"><div id="cap-13-in" class="cap-in">A <span class="kw">4 p.m.</span> coffee is still <span class="kw">half there at 9.</span></div></div>
+    <div id="cap-14" class="clip cap" data-start="34.55" data-duration="0.85" data-track-index="0"><div id="cap-14-in" class="cap-in">When it wears off,</div></div>
+    <div id="cap-15" class="clip cap" data-start="35.5" data-duration="2.7" data-track-index="1"><div id="cap-15-in" class="cap-in">all that built-up <span class="kw">adenosine</span> finally gets through.</div></div>
+    <div id="cap-16" class="clip cap" data-start="38.5" data-duration="0.9" data-track-index="0"><div id="cap-16-in" class="cap-in">That&#x27;s <span class="kw">the crash.</span></div></div>
+    <div id="cap-17" class="clip cap" data-start="39.9" data-duration="3.5" data-track-index="1"><div id="cap-17-in" class="cap-in">Up to <span class="kw">400 mg a day</span> is safe for most healthy adults.</div></div>
+    <div id="cap-18" class="clip cap" data-start="43.7" data-duration="1.0" data-track-index="0"><div id="cap-18-in" class="cap-in">Just <span class="kw">time it right.</span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#cap-00-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},3.3);
+    tl.fromTo("#cap-01-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},3.95);
+    tl.fromTo("#cap-02-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},6.45);
+    tl.fromTo("#cap-03-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},8.85);
+    tl.fromTo("#cap-04-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},11.05);
+    tl.fromTo("#cap-05-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},13.1);
+    tl.fromTo("#cap-06-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},15.65);
+    tl.fromTo("#cap-07-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},18.05);
+    tl.fromTo("#cap-08-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},19.95);
+    tl.fromTo("#cap-09-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},23.3);
+    tl.fromTo("#cap-10-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},25.15);
+    tl.fromTo("#cap-11-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},26.25);
+    tl.fromTo("#cap-12-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},28.35);
+    tl.fromTo("#cap-13-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},30.9);
+    tl.fromTo("#cap-14-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},34.55);
+    tl.fromTo("#cap-15-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},35.5);
+    tl.fromTo("#cap-16-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},38.5);
+    tl.fromTo("#cap-17-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},39.9);
+    tl.fromTo("#cap-18-in",{opacity:0,y:30,scale:0.94},{opacity:1,y:0,scale:1,duration:0.14,ease:"power3.out"},43.7);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

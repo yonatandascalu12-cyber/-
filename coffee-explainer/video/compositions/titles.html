@@ -1,0 +1,107 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Inter", sans-serif; color: #fff; }
+    #root .clip { position: absolute; left: 0; width: 2160px; }
+    .tbox { height: 1500px; }
+    .tin { width: 100%; padding: 0 240px; text-align: center; transform-origin: 50% 30%;
+           text-shadow: 0 8px 40px rgba(0,0,0,.85), 0 2px 6px rgba(0,0,0,.9); }
+    .t-s { font-size: 76px; font-weight: 700; letter-spacing: .08em; }
+    .t-m { font-size: 104px; font-weight: 900; letter-spacing: .02em; line-height: 1.1; }
+    .t-l { font-size: 150px; font-weight: 900; letter-spacing: -.01em; line-height: 1.02; }
+    .t-xl { font-size: 200px; font-weight: 900; letter-spacing: -.02em; line-height: .98; }
+    .t-xxl { font-size: 380px; font-weight: 900; letter-spacing: -.04em; line-height: .95; }
+    .red { color: #ff3b3b; } .amber { color: #ffb12e; } .yellow { color: #ffd23f; } .coffee { color: #e8a96a; } .orange { color: #ffa64d; }
+    .blue { color: #7fe0ff; } .green { color: #8dff63; } .dim { color: rgba(255,255,255,.78); }
+    .chip { display: inline-block; font-size: 64px; font-weight: 700; letter-spacing: .3em; padding: 22px 46px 22px 62px;
+            border: 4px solid rgba(255,255,255,.85); border-radius: 80px; margin-bottom: 36px; background: rgba(0,0,0,.35); }
+    .graph { width: 1400px; height: 520px; margin: 30px auto 10px; display: block; overflow: visible; }
+    .graph .axis { stroke: rgba(255,255,255,.5); stroke-width: 6; fill: none; }
+    .graph .line { stroke: #7fe0ff; stroke-width: 20; fill: none; stroke-linecap: round; stroke-dasharray: 1700; filter: drop-shadow(0 0 22px #1aa0ff); }
+    .graph .dot { fill: #fff; filter: drop-shadow(0 0 24px #7fe0ff); }
+    .disc { display: inline-block; font-size: 46px; font-weight: 400; line-height: 1.35; color: rgba(255,255,255,.88); background: rgba(0,0,0,.62); padding: 22px 40px; border-radius: 24px; }
+    #topshade { position: absolute; left: 0; top: 0; width: 2160px; height: 1500px; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,0) 100%); }
+    #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+    #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="titles" data-width="2160" data-height="3840" data-duration="46" data-layout-allow-overlap>
+    <div id="vignette" data-layout-ignore></div>
+    <div id="topshade" data-layout-ignore></div>
+    <div id="flash" data-layout-ignore></div>
+    <div id="ti-cmpb" class="clip tbox" data-start="18.0" data-duration="1.97" data-track-index="4" style="top:2050px"><div class="tin"><div id="cmp-ado" class="t-m orange">ADENOSINE</div></div></div>
+    <div id="ti-cmpm" class="clip tbox" data-start="18.0" data-duration="1.97" data-track-index="5" style="top:1500px"><div class="tin"><div id="cmp-same" class="t-s">SAME PURINE CORE &#x21C5;</div></div></div>
+        <div id="ti-hook" class="clip tbox" data-start="0.0" data-duration="3.27" data-track-index="1" style="top:470px"><div id="tin-hook" class="tin"><div class="t-s">WHAT HAPPENS IN YOUR BODY</div><div class="t-l">WHEN YOU DRINK</div><div class="t-xl coffee">A COFFEE?</div></div></div>
+    <div id="ti-mg" class="clip tbox" data-start="3.3" data-duration="3.07" data-track-index="2" style="top:470px"><div id="tin-mg" class="tin"><div class="t-xxl blue">95 mg</div><div class="t-l">CAFFEINE</div><div class="t-m dim">IN ONE CUP &middot; C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub></div></div></div>
+    <div id="ti-gut" class="clip tbox" data-start="6.4" data-duration="2.37" data-track-index="3" style="top:470px"><div id="tin-gut" class="tin"><div class="chip">SMALL INTESTINE</div><div class="t-m">ABSORBED <span class="blue">FAST</span></div></div></div>
+    <div id="ti-graph" class="clip tbox" data-start="8.8" data-duration="2.17" data-track-index="1" style="top:470px"><div id="tin-graph" class="tin"><div class="chip">BLOODSTREAM</div><div class="t-l">CAFFEINE <span class="blue">&uarr;</span></div><svg class="graph" viewBox="0 0 1400 520"><path class="axis" d="M40 470 H1360"/><path id="graph-line" class="line" d="M40 460 C 200 440, 300 140, 470 90 S 760 110, 900 180 S 1200 300, 1360 340"/><circle id="graph-dot" cx="480" cy="90" r="22" class="dot"/></svg><div class="t-s dim">PEAK: 30&ndash;60 MIN</div></div></div>
+    <div id="ti-brain" class="clip tbox" data-start="11.0" data-duration="2.02" data-track-index="2" style="top:470px"><div id="tin-brain" class="tin"><div class="chip">BRAIN</div><div class="t-s dim">CROSSES THE BLOOD&ndash;BRAIN BARRIER</div></div></div>
+    <div id="ti-ado" class="clip tbox" data-start="13.1" data-duration="2.55" data-track-index="3" style="top:470px"><div id="tin-ado" class="tin"><div class="chip">ADENOSINE</div><div class="t-m">BUILDS UP <span class="orange">ALL DAY</span></div></div></div>
+    <div id="ti-sleepy" class="clip tbox" data-start="15.7" data-duration="2.27" data-track-index="1" style="top:470px"><div id="tin-sleepy" class="tin"><div class="t-m dim">ADENOSINE ON RECEPTORS</div><div class="t-xl orange">= SLEEPY</div></div></div>
+    <div id="ti-cmp" class="clip tbox" data-start="18.0" data-duration="1.97" data-track-index="2" style="top:470px"><div id="tin-cmp" class="tin"><div class="t-m blue">CAFFEINE</div></div></div>
+    <div id="ti-blocked" class="clip tbox" data-start="20.0" data-duration="2.97" data-track-index="3" style="top:470px"><div id="tin-blocked" class="tin"><div class="t-m">RECEPTORS</div><div class="t-xl blue">BLOCKED</div></div></div>
+    <div id="ti-alert" class="clip tbox" data-start="23.3" data-duration="2.92" data-track-index="1" style="top:470px"><div id="tin-alert" class="tin"><div class="t-xxl blue">ALERT</div><div class="t-m dim">FOCUSED &middot; AWAKE</div></div></div>
+    <div id="ti-heart" class="clip tbox" data-start="26.25" data-duration="1.97" data-track-index="2" style="top:470px"><div id="tin-heart" class="tin"><div class="t-l red">HEART RATE &uarr;</div></div></div>
+    <div id="ti-half" class="clip tbox" data-start="28.35" data-duration="6.07" data-track-index="3" style="top:470px"><div id="tin-half" class="tin"><div class="chip">HALF-LIFE &asymp; 5 HOURS</div><div id="clock" class="t-xxl">4 PM</div><div class="t-m"><span id="pct" class="blue">100%</span> STILL IN YOU</div></div></div>
+    <div id="ti-crash1" class="clip tbox" data-start="35.5" data-duration="3.0" data-track-index="1" style="top:470px"><div id="tin-crash1" class="tin"><div class="t-m dim">CAFFEINE WEARS OFF</div><div class="t-l orange">ADENOSINE</div><div class="t-m orange">FLOODS BACK IN</div></div></div>
+    <div id="ti-crash2" class="clip tbox" data-start="38.5" data-duration="1.22" data-track-index="2" style="top:470px"><div id="tin-crash2" class="tin"><div class="t-xxl red">CRASH</div></div></div>
+    <div id="ti-safe" class="clip tbox" data-start="39.9" data-duration="6.1" data-track-index="3" style="top:470px"><div id="tin-safe" class="tin"><div class="t-m dim">UP TO</div><div class="t-xxl coffee">400 mg</div><div class="t-m">PER DAY &asymp; 4 CUPS</div><div class="t-s dim">FOR MOST HEALTHY ADULTS</div></div></div>
+    <div id="ti-end2" class="clip tbox" data-start="43.74" data-duration="2.26" data-track-index="1" style="top:1560px"><div id="tin-end2" class="tin"><div class="t-l blue">TIME IT RIGHT.</div></div></div>
+    <div id="ti-disc" class="clip tbox" data-start="44.3" data-duration="1.7" data-track-index="2" style="top:1980px"><div id="tin-disc" class="tin"><div class="disc">Educational content. Caffeine per cup varies by brew, and half-life<br>varies by person (~2&ndash;10 h). Pregnancy guidance is lower (&le;200 mg/day).</div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#tin-hook",{scale:1.06},{scale:1,duration:0.6,ease:"power3.out"},0);
+    tl.fromTo("#ti-hook .t-xl",{scale:1},{scale:1.08,duration:0.18,ease:"power2.out",yoyo:true,repeat:1},0.75);
+    tl.fromTo("#tin-mg",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},3.3);
+    tl.to("#tin-mg",{opacity:0,duration:0.12},6.23);
+    tl.fromTo("#tin-gut",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},6.4);
+    tl.to("#tin-gut",{opacity:0,duration:0.12},8.63);
+    tl.fromTo("#tin-graph",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},8.8);
+    tl.to("#tin-graph",{opacity:0,duration:0.12},10.83);
+    tl.fromTo("#tin-brain",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},11.0);
+    tl.to("#tin-brain",{opacity:0,duration:0.12},12.88);
+    tl.fromTo("#tin-ado",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},13.1);
+    tl.to("#tin-ado",{opacity:0,duration:0.12},15.51);
+    tl.fromTo("#tin-sleepy",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},15.7);
+    tl.to("#tin-sleepy",{opacity:0,duration:0.12},17.83);
+    tl.fromTo("#tin-cmp",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},18.0);
+    tl.to("#tin-cmp",{opacity:0,duration:0.12},19.83);
+    tl.fromTo("#tin-blocked",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.16,ease:"power4.out"},20.0);
+    tl.fromTo("#tin-blocked",{x:-14},{x:0,duration:0.2,ease:"elastic.out(1,0.3)"},20.16);
+    tl.to("#tin-blocked",{opacity:0,duration:0.12},22.83);
+    tl.fromTo("#tin-alert",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.16,ease:"power4.out"},23.3);
+    tl.fromTo("#tin-alert",{x:-14},{x:0,duration:0.2,ease:"elastic.out(1,0.3)"},23.46);
+    tl.to("#tin-alert",{opacity:0,duration:0.12},26.08);
+    tl.fromTo("#tin-heart",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},26.25);
+    tl.to("#tin-heart",{opacity:0,duration:0.12},28.08);
+    tl.fromTo("#tin-half",{opacity:0,y:-40},{opacity:1,y:0,duration:0.3,ease:"power3.out"},28.35);
+    tl.to("#tin-half",{opacity:0,duration:0.12},34.28);
+    tl.fromTo("#tin-crash1",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},35.5);
+    tl.to("#tin-crash1",{opacity:0,duration:0.12},38.36);
+    tl.fromTo("#tin-crash2",{opacity:0,scale:1.6},{opacity:1,scale:1,duration:0.16,ease:"power4.out"},38.5);
+    tl.fromTo("#tin-crash2",{x:-14},{x:0,duration:0.2,ease:"elastic.out(1,0.3)"},38.66);
+    tl.to("#tin-crash2",{opacity:0,duration:0.12},39.58);
+    tl.fromTo("#tin-safe",{opacity:0,scale:0.9,filter:"blur(20px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.5,ease:"power3.out"},39.9);
+    tl.fromTo("#tin-end2",{opacity:0,y:60,scale:0.92},{opacity:1,y:0,scale:1,duration:0.28,ease:"back.out(2)"},43.74);
+    tl.fromTo("#tin-disc",{opacity:0},{opacity:1,duration:0.4},44.3);
+    tl.fromTo("#graph-line",{strokeDashoffset:1700},{strokeDashoffset:0,duration:1.5,ease:"power2.inOut"},8.95);
+    tl.fromTo("#graph-dot",{scale:0,transformOrigin:"50% 50%"},{scale:1,duration:0.25,ease:"back.out(3)"},9.6);
+    const clk={h:0};tl.fromTo(clk,{h:0},{h:5,duration:5.0,ease:"none",onUpdate:()=>{const h=clk.h;document.getElementById("clock").textContent=(4+Math.round(h))+" PM";document.getElementById("pct").textContent=Math.round(100*Math.pow(0.5,h/5))+"%";}},28.6);
+    tl.fromTo("#clock",{scale:1},{scale:1.12,duration:0.14,yoyo:true,repeat:1,ease:"power2.out"},33.6);
+    tl.fromTo("#cmp-ado",{opacity:0,y:40},{opacity:1,y:0,duration:0.3,ease:"back.out(2)"},18.15);
+    tl.fromTo("#cmp-same",{opacity:0,scale:0.8},{opacity:1,scale:1,duration:0.3,ease:"back.out(2)"},18.6);
+    tl.set("#flash",{opacity:0.55},3.25);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},3.25);
+    tl.set("#flash",{opacity:0.55},6.35);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},6.35);
+    tl.set("#flash",{opacity:0.55},8.75);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},8.75);
+    tl.set("#flash",{opacity:0.55},10.95);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},10.95);
+    tl.set("#flash",{opacity:0.55},13.0);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},13.0);
+    tl.set("#flash",{opacity:0.55},17.95);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},17.95);
+    tl.set("#flash",{opacity:0.55},19.95);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},19.95);
+    tl.set("#flash",{opacity:0.55},22.95);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},22.95);
+    tl.set("#flash",{opacity:0.55},26.2);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},26.2);
+    tl.set("#flash",{opacity:0.55},28.2);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},28.2);
+    tl.set("#flash",{opacity:0.55},34.4);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},34.4);
+    tl.set("#flash",{opacity:0.55},39.7);tl.to("#flash",{opacity:0,duration:0.2,ease:"power2.out"},39.7);
+    tl.set("#flash",{opacity:0},0);
+    window.__timelines["titles"] = tl;
+  </script>
+</template>
